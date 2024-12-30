@@ -1,3 +1,4 @@
+/*donnée général sur le body */
 body {
     
     background: linear-gradient(135deg, #6b8f7f, #3d5a3b); /* Dégradé vert */
@@ -12,7 +13,7 @@ body {
     overflow-x: hidden;
 }
 
-
+/*gestion du titre*/
 #title {
     font-size: 3rem;
     text-align: center;
@@ -22,7 +23,7 @@ body {
     margin-bottom: 40px;
 }
 
-
+/*change est la div qui contient la zone de texte*/
 #change {
     display: flex;
     justify-content: center;
@@ -30,7 +31,7 @@ body {
     margin-bottom: 20px;
 }
 
-
+/*la zone de texte*/
 #ecris {
     width: 250px;
     padding: 12px;
@@ -42,7 +43,7 @@ body {
     text-align: center;
     transition: border 0.3s ease, background-color 0.3s ease;
 }
-
+/*animation quand on survole la zone de texte*/
 #ecris:focus {
     border-color: #48c6ef;
     background-color: #f0f8ff;
@@ -50,7 +51,7 @@ body {
     outline: none;
 }
 
-
+/*bouton*/
 #btnid {
     padding: 10px 20px;
     background-color: #48c6ef;
@@ -61,12 +62,12 @@ body {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
-
+/*animation quand on survole le bouton*/
 #btnid:hover {
     background-color: #32a4c3;
 }
 
-
+/*graphique*/
 #graph {
     position: relative;
     height: 450px;
