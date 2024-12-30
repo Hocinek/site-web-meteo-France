@@ -1,8 +1,8 @@
 body {
-    font-family: 'Arial', sans-serif;
+    
     background: linear-gradient(135deg, #6b8f7f, #3d5a3b); /* Dégradé vert */
     color: white;
-    min-height: 100vh;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -12,7 +12,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Titre principal */
+
 #title {
     font-size: 3rem;
     text-align: center;
@@ -22,7 +22,7 @@ body {
     margin-bottom: 40px;
 }
 
-/* Section de changement de ville */
+
 #change {
     display: flex;
     justify-content: center;
@@ -30,7 +30,7 @@ body {
     margin-bottom: 20px;
 }
 
-/* Champ de saisie pour la ville */
+
 #ecris {
     width: 250px;
     padding: 12px;
@@ -43,15 +43,14 @@ body {
     transition: border 0.3s ease, background-color 0.3s ease;
 }
 
-/* Focus sur le champ de saisie - on adoucit l'effet */
 #ecris:focus {
     border-color: #48c6ef;
-    background-color: #f0f8ff; /* Bleu clair très doux */
-    color: black; /* Changer la couleur du texte pour plus de lisibilité */
+    background-color: #f0f8ff;
+    color: black; 
     outline: none;
 }
 
-/* Bouton de changement de ville */
+
 #btnid {
     padding: 10px 20px;
     background-color: #48c6ef;
@@ -63,12 +62,11 @@ body {
     transition: background-color 0.3s ease;
 }
 
-/* Effet au survol du bouton */
 #btnid:hover {
     background-color: #32a4c3;
 }
 
-/* Section du graphique */
+
 #graph {
     position: relative;
     height: 450px;
@@ -81,58 +79,6 @@ body {
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
 }
 
-
-
-
-/* 
-body{
-    background-color: #b1b1b1;
-    
-    
-
-}
-
-header{
-    width: 80px;
-    height:80px;
-}
-
-#ecris{
-    resize: none;
-}
-
-#change{
-    display: flex;
-    
-   
-}
-
-#graph {
-    position: absolute;
-    top: 30%;
-    height: 450px;
-    width: 1200px;
-}
-
-#btnid {
-    position: absolute;
-    left: 12%;
-    font-size: 16px;
-    height: 36px;
-    width: 200px;
-}
-
-#title{
-    font-size: 40px;
-    position: absolute;
-    right: 47%;
-    top: -2%;
-    
-
-}
-
-
-*/
 
 
 

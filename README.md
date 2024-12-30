@@ -1,1 +1,1 @@
-"# site-web-m-t-o-France" 
+Un site web interactif qui permet de consulter la météo actuelle pour n'importe quelle ville de France, avec des graphiques de température.
