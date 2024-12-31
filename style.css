@@ -30,6 +30,10 @@ body {
     gap: 15px;
     margin-bottom: 20px;
 }
+#ecris::placeholder {
+    color: #d3d3d3; /* Choisissez une couleur qui correspond au design */
+    opacity: 1; /* Optionnel, pour éviter que le texte soit trop transparent */
+}
 
 /*la zone de texte*/
 #ecris {
