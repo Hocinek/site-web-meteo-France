@@ -1,7 +1,7 @@
 /*donnée général sur le body */
 body {
     
-    background: linear-gradient(135deg, #6b8f7f, #3d5a3b); /* Dégradé vert */
+    background: linear-gradient(135deg, #a8d8f0, #83c6e6); /* Dégradé vert */
     color: white;
     
     display: flex;
@@ -21,6 +21,8 @@ body {
     letter-spacing: 2px;
     margin: 0;
     margin-bottom: 40px;
+    width: 100vw;
+    background: linear-gradient(135deg, #48c6ef, #32a4c3);
 }
 
 /*change est la div qui contient la zone de texte*/
