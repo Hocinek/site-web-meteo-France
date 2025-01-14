@@ -1,5 +1,28 @@
 addEventListener("DOMContentLoaded", init);
 
+
+
+const weatherinterpretation = {
+    0: "Ciel clair",
+    1: "Principalement clair",
+    2: "Partiellement nuageux",
+    3: "Nuageux",
+    45: "Brouillard",
+    48: "Brouillard givrant",
+    51: "Pluie légère",
+    53: "Pluie modérée",
+    55: "Pluie dense",
+    61: "Averses légères",
+    63: "Averses modérées",
+    65: "Averses intenses",
+    80: "Averses isolées",
+    81: "Averses fréquentes",
+    82: "Averses très intenses",
+    95: "Orages légers à modérés",
+    96: "Orages avec grêle légère",
+    99: "Orages avec grêle forte",
+};
+
 function init() {
     const btn = document.createElement("button");
     const zonet = document.getElementById("ecris");
@@ -16,7 +39,7 @@ function init() {
         }
     );
 }
-
+//affiche le texte 
 function affiche(donne, lieu) {
     const met = document.getElementById("meteo");
     if (met.lastChild) {
@@ -24,12 +47,11 @@ function affiche(donne, lieu) {
     }
     const weathercode = donne.current_weather.weathercode;
     const newel = document.createElement("P");
-    newel.innerText = "La météo de " + lieu + " est " + donne.current_weather.temperature + "°C et le weatherCode est " + weathercode + "\n signifiant " + weatherInterpretation[weathercode];
+    newel.innerText = "La météo de " + lieu + " est " + donne.current_weather.temperature + "°C et le weatherCode est " + weathercode + "\n signifiant " + weatherinterpretation[weathercode];
     met.appendChild(newel);
 }
 
 function appliquecoor(coor, lieu) {
-    // Lien API avec latitude et longitude correctes
     const lien = "https://api.open-meteo.com/v1/forecast?latitude=" + coor[1] + "&longitude=" + coor[0] + "&current_weather=true&hourly=temperature_2m";
 
     fetch(lien)
@@ -40,14 +62,14 @@ function appliquecoor(coor, lieu) {
             return response.json();
         })
         .then((data) => {
-            affiche(data, lieu); // Appel à la fonction d'affichage
-            generateCSV(data); // Génération du CSV et graphique
+            affiche(data, lieu); 
+            generecsv(data); 
         })
         .catch((error) => {
             console.error("Erreur :", error.message);
         });
 }
-
+//récupère les coordoonées 
 function coordonne(lieu) {
     const adresse = "https://api-adresse.data.gouv.fr/search/?q=" + encodeURIComponent(lieu);
 
@@ -68,8 +90,8 @@ function coordonne(lieu) {
             console.error("Erreur :", error.message);
         });
 }
-
-function generateCSV(data) {
+//génèrelecsv 
+function generecsv(data) {
     const colonne = [["Time", "Temperature (°C)"]];
 
     for (let i = 0; i < data.hourly.time.length; i++) {
@@ -80,7 +102,7 @@ function generateCSV(data) {
         return row.join(",");
     }).join("\n");
 
-    return tracegraphe(fichiercsv); // Utilisation du CSV pour tracer le graphique
+    return tracegraphe(fichiercsv); // utilise du CSV pour tracer le graphique
 }
 
 function tracegraphe(csv) {
@@ -152,23 +174,3 @@ function tracegraphe(csv) {
 
 
 
-const weatherInterpretation = {
-    0: "Ciel clair",
-    1: "Principalement clair",
-    2: "Partiellement nuageux",
-    3: "Nuageux",
-    45: "Brouillard",
-    48: "Brouillard givrant",
-    51: "Pluie légère",
-    53: "Pluie modérée",
-    55: "Pluie dense",
-    61: "Averses légères",
-    63: "Averses modérées",
-    65: "Averses intenses",
-    80: "Averses isolées",
-    81: "Averses fréquentes",
-    82: "Averses très intenses",
-    95: "Orages légers à modérés",
-    96: "Orages avec grêle légère",
-    99: "Orages avec grêle forte",
-};
